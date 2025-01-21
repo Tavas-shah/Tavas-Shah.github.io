@@ -1,112 +1,227 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BhaskarPrabha Foundation</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <title>Indian Mathematics - Bhaskar Prabha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: #8B4513;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8B4513;
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.3);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(0, 0, 0, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-weight: 800;
+            margin: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+  @media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        height: auto;
+        padding: 0; /* Remove padding to allow full-width image */
+    }
+    
+    .hero img {
+        width: 100%;
+        height: 100vh; /* Use viewport height for proper scaling */
+        object-fit: cover;
+        object-position: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Navigation button adjustments */
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .prev-btn {
+        left: 10px;
+    }
+
+    .next-btn {
+        right: 10px;
+    }
+}
+
+    </style>
 </head>
 <body>
-     <header class="header">
-        <div class="nav-container">
-            <a href="#" class="logo">BHASKARPRABHA</a>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav class="nav-links">
-                <a href="about.html" target="_blank">About Us</a>
-                <a href="#" target="_blank">Admission</a>
-                <a href="newcontact.html" target="_blank">Contact</a>
-                <div class="dropdown">
-                    <a href="#" class="dropdown-trigger">More</a>
-                    <div class="dropdown-content">
-                        <a href="#" target="_blank">People</a>
-                        <a href="#" target="_blank">Gallery</a>
-                        <a href="#" target="_blank">Events</a>
-                    </div>
-                </div>
-            </nav>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">BHASKAR PRABHA</a>
+        <div class="nav-links">
+            <a href="#">About Us</a>
+            <a href="#">Admission</a>
+            <a href="#">Contact</a>
+            <a href="#">More</a>
         </div>
-    </header>
+    </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="hero">
         <button class="nav-btn prev-btn" aria-label="Previous image">&lt;</button>
-                <button class="nav-btn next-btn" aria-label="Next image">&gt;</button>
+        <div class="hero-content">
+            <h1 id="rotating-text" class="hero-title">Indian Mathematics</h1>
+        </div>
+        <button class="nav-btn next-btn" aria-label="Next image">&gt;</button>
     </section>
 
-    <section class="about-section" data-aos="fade-up">
-        <div class="card">
-            <h2 class="section-title">BhaskarPrabha Foundation</h2>
-            <p>The Bhaskar Prabha Foundation, established in 2025, is dedicated to the study and promotion of both modern and ancient mathematics. We focus on advancing mathematical knowledge and inspiring the next generation of mathematicians through a blend of historical wisdom and contemporary methods.</p>
-        </div>
-    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hero = document.getElementById('hero');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            
+            // Array of image paths
+            const images = ['1.jpg', 'sita.png', '2.jpg'];
+            let currentImage = 0;
 
-    <section class="gallery-section" data-aos="fade-up">
-        <div class="card">
-            <h2 class="section-title">Our Moments</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="4.png" alt="Group Photo 1" width="600">
-                    <div class="gallery-caption">
-                        <h3>Group Photo 1</h3>
-                        <p>A memorable moment with our foundation members</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="5.png" alt="Group Photo 2" width="600">
-                    <div class="gallery-caption">
-                        <h3>Group Photo 2</h3>
-                        <p>Celebrating our achievements together</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            // Initialize first image
+            hero.style.backgroundImage = `url('${images[currentImage]}')`;
 
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <div class="footer-links">
-                    <a href="#">Home</a>
-                    <a href="about.html" target="_blank">About Us</a>
-                    <a href="#">Mission</a>
-                    <a href="newcontact.html" target="_blank">Contact</a>
-                    <a href="#">School System</a>
-                    <a href="#">Gallery</a>
-                    <a href="#">Events</a>
-                    <a href="#">Support Us</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <div class="contact-info">
-                    <i class="phone-icon">📞</i>
-                    <p>8275281687</p>
-                </div>
-                <div class="contact-info">
-                    <i class="email-icon">📧</i>
-                    <p>info@bhaskarprabha.org</p>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Visit Us</h3>
-                <p>2, Anand Vihar Colony Rd,<br>
-                Near Sudarshan Nivas, Anand Vihar,<br>
-                Mahadev Nagar, Hingne Khurd,<br>
-                Pune, Maharashtra 411009</p>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 BhaskarPrabha Foundation. All rights reserved.</p>
-        </div>
-    </footer>
+            // Previous button click handler
+            prevBtn.addEventListener('click', () => {
+                currentImage--;
+                if (currentImage < 0) {
+                    currentImage = images.length - 1;
+                }
+                hero.style.backgroundImage = `url('${images[currentImage]}')`;
+            });
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="index.js"></script>
-    <script src="mobile.js"></script>
+            // Next button click handler
+            nextBtn.addEventListener('click', () => {
+                currentImage++;
+                if (currentImage >= images.length) {
+                    currentImage = 0;
+                }
+                hero.style.backgroundImage = `url('${images[currentImage]}')`;
+            });
+
+            // Optional: Auto-change every 5 seconds
+            setInterval(() => {
+                currentImage++;
+                if (currentImage >= images.length) {
+                    currentImage = 0;
+                }
+                hero.style.backgroundImage = `url('${images[currentImage]}')`;
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
